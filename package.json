@@ -1,0 +1,27 @@
+{
+  "name": "new-folder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamidullah-hamidi/SkyTeams-Internship-2025-Fall-hamidullah.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamidullah-hamidi/SkyTeams-Internship-2025-Fall-hamidullah/issues"
+  },
+  "homepage": "https://github.com/hamidullah-hamidi/SkyTeams-Internship-2025-Fall-hamidullah#readme",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.9"
+  }
+}
