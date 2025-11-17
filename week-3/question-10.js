@@ -24,4 +24,4 @@ export const isPrimeNumber = (num) => {
 };
 
 // console.log(isPrimeNumber(17));
-console.log(isPrimeNumber(20));
+// console.log(isPrimeNumber(20));
