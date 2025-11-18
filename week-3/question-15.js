@@ -18,17 +18,15 @@
 export const isArmstrong = (num) => {
   if (num < 0) return undefined;
 
-  num = num.toString();
-
   let result = 0;
 
-  const digitsLength = num.length;
+  const digitsLength = num.toString().length;
 
-  for (let e of num) {
+  for (let e of num.toString()) {
     result += Number(e) ** digitsLength;
   }
 
-  return result === +num;
+  return result === num;
 };
 
 console.log(isArmstrong(153));
