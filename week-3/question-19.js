@@ -14,13 +14,15 @@
 // *********
 
 export const pyramid = (row) => {
-  let output = [];
+  let result = [];
 
   for (let i = 1; i <= row; i++) {
     let spaces = ' '.repeat(row - i);
     let stars = '*'.repeat(2 * i - 1);
-    output.push(spaces + stars);
+    result.push(spaces + stars);
   }
 
-  return output;
+  return result;
 };
+
+console.log(pyramid(4).forEach((el) => console.log(el)));
