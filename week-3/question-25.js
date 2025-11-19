@@ -9,6 +9,20 @@
 // • The program gives hints like “Too High” or “Too Low”.
 // • Continue until the user guesses correctly.
 
+// way -1 (because of run test file use this function)
+
+export const numberGuessingGame = (secretNumber, guess) => {
+  if (guess > secretNumber) return 'Too High';
+  if (guess < secretNumber) return 'Too Low';
+  return 'Correct';
+};
+
+console.log(numberGuessingGame(50, 20));
+console.log(numberGuessingGame(50, 89));
+console.log(numberGuessingGame(50, 50));
+
+// way -2 (use readline for take number from user until guess the correct number)
+/*
 import readline from 'readline';
 
 const rl = readline.createInterface({
@@ -34,5 +48,4 @@ export const numberGuessingGame = () => {
     }
   });
 };
-
-numberGuessingGame();
+*/
