@@ -91,8 +91,8 @@ const array = [1, 3, 6, 3, 15, 3];
 
 let largest = 0;
 
-for (let e of array) {
-  if (e > largest) largest = e;
+for (let num of array) {
+  if (num > largest) largest = num;
 }
 
 // console.log(largest);
