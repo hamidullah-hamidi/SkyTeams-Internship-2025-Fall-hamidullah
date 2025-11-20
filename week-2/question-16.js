@@ -9,9 +9,9 @@
 // 1, 2, 3, ..., 100
 
 function printNumbers() {
-  let result = '';
+  let result = [];
   for (let i = 1; i <= 100; i++) {
-    result += i + ', ';
+    result.push(i);
   }
 
   return result;

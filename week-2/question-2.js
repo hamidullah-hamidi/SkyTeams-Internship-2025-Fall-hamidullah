@@ -16,7 +16,9 @@ export function largestSmallest(num1, num2, num3) {
   //   if (e < smallest) smallest = e;
   // }
 
-  return `Largest: ${largest}, Smallest: ${smallest}`;
+  return [smallest, largest];
 }
 
 console.log(largestSmallest(1, 2, 3));
+
+module.exports = largestSmallest;

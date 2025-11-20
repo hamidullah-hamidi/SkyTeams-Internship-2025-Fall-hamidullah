@@ -20,6 +20,6 @@ function findGCD(a, b) {
   return a;
 }
 
-console.log(findGCD(12, 18)); // 6
+console.log(findGCD(12, 18));
 
 module.exports = findGCD;

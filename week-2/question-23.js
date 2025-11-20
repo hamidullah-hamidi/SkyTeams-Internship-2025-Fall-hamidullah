@@ -10,12 +10,10 @@
 // 0, 1, 1, 2, 3, 5, 8
 
 function fibonacciSeries(num) {
-  if (num === 0) return [0];
-  if (num === 1) return [0, 1];
+  if (num === 0) return [];
+  if (num === 1) return [0];
 
-  let first = 0;
-  let second = 1;
-  let result = [first, second];
+  let result = [0, 1];
 
   for (let i = 2; i < num; i++) {
     result = [...result, result[i - 2] + result[i - 1]];

@@ -11,6 +11,8 @@
 // 15
 
 function sumOfNumber(num) {
+  if (num < 0) return NaN;
+
   let result = 0;
 
   for (let i = 1; i <= num; i++) {
@@ -19,5 +21,7 @@ function sumOfNumber(num) {
 
   return result;
 }
+
+module.exports = sumOfNumber;
 
 console.log(sumOfNumber(5));

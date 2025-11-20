@@ -21,3 +21,5 @@ function countDigits(num) {
 }
 
 console.log(countDigits(786));
+
+module.exports = countDigits;

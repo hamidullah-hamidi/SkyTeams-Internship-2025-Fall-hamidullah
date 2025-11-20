@@ -34,4 +34,6 @@ function checkCharacterType(character) {
   else return 'consonant';
 }
 
+module.exports = checkCharacterType;
+
 console.log(checkCharacterType('a'));

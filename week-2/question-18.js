@@ -19,3 +19,5 @@ function multiplicationTable(num) {
   }
 }
 multiplicationTable(5);
+
+module.exports = multiplicationTable;

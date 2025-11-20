@@ -11,13 +11,13 @@
 // Output:
 // Not leap year
 
-function leapYearChecker(year) {
-  if (year % 4 !== 0) return 'Not leap year';
+function isLeapYear(year) {
+  if (year % 4 !== 0) return false;
 
-  if (year % 100 === 0 && year % 400 !== 0) return 'Not leap year';
-  else return 'leap year';
+  if (year % 100 === 0 && year % 400 !== 0) return false;
+  else return true;
 }
 
-console.log(leapYearChecker(2023));
+console.log(isLeapYear(2023));
 
 module.exports = leapYearChecker;

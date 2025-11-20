@@ -11,9 +11,11 @@
 // 4321
 
 function reverseNumber(num) {
+  const absNum = Math.abs(num);
+
   // way 1:
   let numString = num.toString().split('').reverse().join('');
-  return +numString;
+  return num < 0 ? -+numString : +numString;
 
   // way 2:
   /*
@@ -30,5 +32,7 @@ function reverseNumber(num) {
   return +result;
   */
 }
+
+module.exports = reverseNumber;
 
 console.log(reverseNumber(1234));
