@@ -3,13 +3,17 @@
 //  Example: Input: a = 5, b = 10 Output: a = 10, b = 5
 
 function swapValues(a, b) {
-  a = a + b; // 30
-  b = a - b; // 10
-  a = a - b; // 20
+  // way -1 (not good for large numbers, cause of overflow)
+  // a = a + b;
+  // b = a - b;
+  // a = a - b;
 
-  return `a: ${a} , b: ${b}`;
+  // way 2 (better)
+  [a, b] = [b, a];
+
+  return [a, b];
 }
 
 module.exports = swapValues;
 
-console.log(swapValues(10, 20)); // 20, 10
+console.log(swapValues(5, 7));
