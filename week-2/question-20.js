@@ -13,7 +13,9 @@
 function countDigits(num) {
   let count = 0;
 
-  for (let i = 0; i < num.toString().length; i++) {
+  // use divide by 10 better and right way than changing to string
+  while (num !== 0) {
+    num = Math.floor(num / 10);
     count++;
   }
 
