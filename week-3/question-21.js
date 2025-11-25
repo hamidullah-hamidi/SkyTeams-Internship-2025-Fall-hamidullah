@@ -26,7 +26,7 @@ export const passwordChecker = (password) => {
   for (let e of password) {
     if (e >= 'A' && e <= 'Z') hasUpperCase = true;
     if (e >= 'a' && e <= 'z') hasLowerCase = true;
-    if (e >= 0 && e <= 9) hasDigit = true;
+    if (e >= '0' && e <= '9') hasDigit = true;
   }
 
   if (hasUpperCase && hasLowerCase && hasDigit) return 'Strong';
