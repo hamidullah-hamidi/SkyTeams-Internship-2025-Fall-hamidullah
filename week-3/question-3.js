@@ -13,18 +13,13 @@
 export function sumDigits(num) {
   num = Math.abs(num);
 
-  // way -1
   let sum = 0;
-  for (let e of num.toString()) {
-    sum += Number(e);
-  }
 
-  // way -2
-  // const numArray = [];
-  // for (let e of num.toString()) {
-  //   numArray.push(Number(e));
-  // }
-  // const sum = numArray.reduce((acc, cur) => acc + cur);
+  while (num !== 0) {
+    const digit = num % 10;
+    sum += digit;
+    num = Math.floor(num / 10);
+  }
 
   return sum;
 }
