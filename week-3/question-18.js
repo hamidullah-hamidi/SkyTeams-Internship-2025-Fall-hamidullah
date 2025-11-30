@@ -1,7 +1,7 @@
 // Author: hamidullah hamidi
 // Date: 2025/18/11
 
-// Question: Pattern Printing – Right-aligned Triangle
+// Question: Pattern Printing – Left-aligned Triangle
 // Example:
 // Input:
 // 4
@@ -12,24 +12,25 @@
 //  ***
 // ****
 
-// export const rightAngledTriangle = (row) => {
-//   for (let i = 1; i <= row; i++) {
-//     let spaces = ' '.repeat(row - i);
-//     let stars = '*'.repeat(i);
-//     console.log(spaces + stars);
-//   }
-// };
+export const leftAngledTriangle = (row) => {
+  let result = '';
 
-export const rightAngledTriangle = (row) => {
-  let output = [];
+  for (let i = 0; i < row; i++) {
+    let star = '';
+    let space = '';
 
-  for (let i = 1; i <= row; i++) {
-    let spaces = ' '.repeat(row - i);
-    let stars = '*'.repeat(i);
-    output.push(spaces + stars);
+    for (let j = row - i; j > 0; j--) {
+      space += ' ';
+    }
+
+    for (let k = 0; k <= i; k++) {
+      star += '*';
+    }
+
+    result += space + star + '\n';
   }
 
-  return output;
+  return result;
 };
 
-rightAngledTriangle(4);
+console.log(leftAngledTriangle(4));
