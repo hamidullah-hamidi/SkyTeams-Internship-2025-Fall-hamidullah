@@ -29,19 +29,14 @@ console.log(intersectionOfArrays([1, 2, 2, 3], [2, 2, 4]));
 //* with obj
 /*
 
- const obj = {};
+  let obj = {};
 
-  for (let num of arr1) {
-    if (!obj[num]) obj[num] = 1;
-    else obj[num] = obj[num] + 1;
-  }
-  for (let num of arr2) {
-    if (!obj[num]) obj[num] = 1;
-    else obj[num] = obj[num] + 1;
+  for (let el of arr2) {
+    obj[el] = true;
   }
 
-  for (let key in obj) {
-    if (obj[key] > 1) result.push(key);
-}
+  for (let el of arr1) {
+    if (obj[el] && !myIncludes(result, el)) result.push(el);
+  }
   
 */
