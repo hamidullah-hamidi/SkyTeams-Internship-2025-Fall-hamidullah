@@ -1,24 +1,36 @@
-import { describe, it, expect } from 'vitest';
-import { rotateArrayToRight } from './question-3';
+import { describe, expect, test } from 'vitest';
+import { intersectionOfArrays } from './question-4';
 
-describe('rotateArrayToRight', () => {
-  it('should rotate the array 2 times to the right', () => {
-    expect(rotateArrayToRight([1, 2, 3, 4, 5], 2)).toEqual([4, 5, 1, 2, 3]);
+describe('intersectionOfArrays', () => {
+  test('finds common elements in two normal arrays', () => {
+    expect(intersectionOfArrays([1, 2, 3, 4], [3, 4, 5, 6])).toEqual([3, 4]);
   });
 
-  it('should rotate 1 time to the right', () => {
-    expect(rotateArrayToRight([10, 20, 30], 1)).toEqual([30, 10, 20]);
+  test('returns empty array when there is no common element', () => {
+    expect(intersectionOfArrays([10, 20], [30, 40])).toEqual([]);
   });
 
-  it('should handle k = 0 (no rotation)', () => {
-    expect(rotateArrayToRight([1, 2, 3], 0)).toEqual([1, 2, 3]);
+  test('works with duplicate values (should repeat matches)', () => {
+    expect(intersectionOfArrays([1, 2, 2, 3], [2, 2, 4])).toEqual([2]);
   });
 
-  it('should handle k larger than array length', () => {
-    expect(rotateArrayToRight([1, 2, 3, 4], 6)).toEqual([3, 4, 1, 2]);
+  test('works with negative numbers', () => {
+    expect(intersectionOfArrays([-1, -2, 3], [3, -2, 10])).toEqual([-2, 3]);
   });
 
-  it('should handle array of length 1', () => {
-    expect(rotateArrayToRight([99], 5)).toEqual([99]);
+  test('works with empty first array', () => {
+    expect(intersectionOfArrays([], [1, 2, 3])).toEqual([]);
+  });
+
+  test('works with empty second array', () => {
+    expect(intersectionOfArrays([1, 2, 3], [])).toEqual([]);
+  });
+
+  test('works when both arrays are empty', () => {
+    expect(intersectionOfArrays([], [])).toEqual([]);
+  });
+
+  test('works when arrays contain same element multiple times', () => {
+    expect(intersectionOfArrays([5, 5, 5], [5, 5])).toEqual([5]);
   });
 });
