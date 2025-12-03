@@ -6,30 +6,34 @@
 // Description: Handle options for balance, withdraw, deposit, exit.
 // Example: "100 withdrawn successfully"
 
-export const ATMSystem = () => {
-  let balance = 0;
+export class ATMSystem {
+  constructor() {
+    this.balance = 0;
+  }
 
-  return (method, value) => {
-    if (method === 'balance') return `Your balance is ${balance}`;
+  deposit(value) {
+    this.balance += value;
+    return `${value} deposited successfully`;
+  }
 
-    if (method === 'deposit') {
-      balance += value;
-      return `${value} deposited successfully`;
-    }
-    if (method === 'withdraw') {
-      if (balance < value) return 'Insufficient balance';
-      balance -= value;
-      return `${value} withdrawn successfully`;
-    }
-    if (method === 'exit') return 'Exiting system';
-    else return 'Invalid option';
-  };
-};
+  withDraw(value) {
+    if (this.balance < value) return 'Insufficient balance';
+    this.balance -= value;
+    return `${value} withdrawn successfully`;
+  }
 
-const myATM = ATMSystem();
+  checkBalance() {
+    return `Your balance is ${this.balance}`;
+  }
 
-console.log(myATM('deposit', 10000));
-console.log(myATM('balance'));
-console.log(myATM('withdraw', 1000));
-console.log(myATM('balance'));
-console.log(myATM('exit'));
+  exit() {
+    return 'Exiting system';
+  }
+}
+
+const myATM = new ATMSystem();
+console.log(myATM.checkBalance());
+console.log(myATM.deposit(10000));
+console.log(myATM.checkBalance());
+console.log(myATM.withDraw(1000));
+console.log(myATM.checkBalance());
