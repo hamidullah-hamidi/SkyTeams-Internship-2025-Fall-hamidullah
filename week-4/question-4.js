@@ -8,35 +8,35 @@
 // Input: [1, 2, 3, 4], [3, 4, 5, 6]
 // Output: [3, 4]
 
-import { myIncludes } from '../helpers/arrays/myIncludes.js';
-
 export const intersectionOfArrays = (arr1, arr2) => {
+  const map = new Map();
   let result = [];
 
-  for (let i = 0; i < arr1.length; i++) {
-    for (let j = 0; j < arr2.length; j++) {
-      if (arr1[i] === arr2[j] && !myIncludes(result, arr1[i])) {
-        result.push(arr1[i]);
-        break;
-      }
+  for (let el of arr1) {
+    if (!map.has(el)) map.set(el, true);
+  }
+
+  for (let el of arr2) {
+    if (map.has(el)) {
+      result.push(el);
+      map.delete(el);
     }
   }
 
   return result;
 };
-console.log(intersectionOfArrays([1, 2, 2, 3], [2, 2, 4]));
+console.log(intersectionOfArrays([1, 2, 3, 4], [3, 4, 5, 6]));
 
 //* with obj
-/*
+// let obj = {};
+// let result = {};
 
-  let obj = {};
+// for (let el of arr1) {
+//   obj[el] = true;
+// }
 
-  for (let el of arr2) {
-    obj[el] = true;
-  }
+// for (let el of arr2) {
+//   if (obj[el]) result[el] = true;
+// }
 
-  for (let el of arr1) {
-    if (obj[el] && !myIncludes(result, el)) result.push(el);
-  }
-  
-*/
+// return Object.keys(result).map(Number);

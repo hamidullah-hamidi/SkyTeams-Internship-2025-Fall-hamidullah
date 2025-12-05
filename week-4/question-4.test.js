@@ -15,7 +15,7 @@ describe('intersectionOfArrays', () => {
   });
 
   test('works with negative numbers', () => {
-    expect(intersectionOfArrays([-1, -2, 3], [3, -2, 10])).toEqual([-2, 3]);
+    expect(intersectionOfArrays([-1, -2, 3], [3, -2, 10])).toEqual([3, -2]);
   });
 
   test('works with empty first array', () => {
