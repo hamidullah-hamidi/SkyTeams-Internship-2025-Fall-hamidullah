@@ -22,4 +22,4 @@ export const rearrangeArray = (arr) => {
   return arr;
 };
 
-console.log(rearrangeArray([1, 2, 3, 4, 5, 6]));
+console.log(rearrangeArray([10, 1, 8, 3, 6, 5]));
