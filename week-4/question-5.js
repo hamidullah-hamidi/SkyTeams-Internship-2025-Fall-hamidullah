@@ -9,15 +9,17 @@
 // Output: [2, 4, 6, 1, 3, 5]
 
 export const rearrangeArray = (arr) => {
-  let odd = [];
-  let even = [];
-
-  for (let el of arr) {
-    if (el % 2 === 0) even.push(el);
-    else odd.push(el);
+  let j = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+      j++;
+    }
   }
 
-  return [...even, ...odd];
+  return arr;
 };
 
 console.log(rearrangeArray([1, 2, 3, 4, 5, 6]));
