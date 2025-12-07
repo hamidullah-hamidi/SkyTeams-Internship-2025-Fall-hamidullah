@@ -16,7 +16,7 @@ export const isRotated = (str1, str2) => {
   for (let i = 0; i < str2.length; i++) {
     let match = true;
 
-    for (let j = 0; k < str2.length; j++) {
+    for (let j = 0; j < str2.length; j++) {
       if (sumStr[i + j] !== str2[j]) {
         match = false;
         break;

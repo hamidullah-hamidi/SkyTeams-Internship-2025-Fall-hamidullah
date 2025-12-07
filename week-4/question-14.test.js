@@ -11,8 +11,14 @@ describe('permutationsOfString', () => {
   });
 
   it('should return all permutations of "abc"', () => {
-    const expected = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba'];
-    expect(permutationsOfString('abc')).toEqual(expected.sort());
+    expect(permutationsOfString('abc')).toEqual([
+      'abc',
+      'acb',
+      'bac',
+      'bca',
+      'cab',
+      'cba',
+    ]);
   });
 
   it('should return all permutations of empty string', () => {
