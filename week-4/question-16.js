@@ -16,7 +16,7 @@ export const matrixMultiplication = (A, B) => {
     for (let j = 0; j < B[0].length; j++) {
       let sum = 0;
       for (let k = 0; k < A[0].length; k++) {
-        sum += A[i][k] * B[k][j];
+        sum += A[i][k] * B[k][j]; // (1 * 5) + (2 * 7)
       }
       row.push(sum);
     }

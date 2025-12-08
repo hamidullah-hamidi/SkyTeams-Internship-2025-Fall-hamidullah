@@ -15,7 +15,7 @@ export const isUniqueString = (str) => {
 
   for (let el of str) {
     if (obj[el]) return false;
-    obj[el] = true;
+    else obj[el] = true;
   }
 
   return true;
