@@ -31,6 +31,10 @@ export class StackArray {
   size() {
     return this.items.length;
   }
+
+  getAll() {
+    return this.items;
+  }
 }
 
 const stack = new StackArray();
@@ -43,3 +47,4 @@ stack.push(30);
 // console.log(stack.isEmpty());
 // console.log(stack.pop());
 // console.log(stack.size());
+// console.log(stack.getAll());
