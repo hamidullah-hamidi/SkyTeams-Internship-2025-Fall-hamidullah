@@ -1,5 +1,5 @@
-// isUniqueString.test.js
-import { isUniqueString } from './isUniqueString.js';
+import { describe, expect, test } from 'vitest';
+import { isUniqueString } from './question-10';
 
 describe('isUniqueString', () => {
   test('should return false for strings with repeated characters', () => {

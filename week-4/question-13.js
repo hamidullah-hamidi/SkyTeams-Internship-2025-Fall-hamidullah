@@ -6,7 +6,7 @@
 // Description: Check if sentence follows the pattern.
 // Example: "dog cat cat dog" → True
 
-import mySplit from '../helpers/strings/mySplit';
+import { mySplit } from '../helpers/strings/mySplit.js';
 
 export const stringPattern = (pattern, sentence) => {
   const map1 = new Map();
