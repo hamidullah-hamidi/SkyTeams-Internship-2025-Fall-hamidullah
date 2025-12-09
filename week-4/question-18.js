@@ -33,13 +33,13 @@ export class StackArray {
   }
 }
 
-const a = new StackArray();
+const stack = new StackArray();
 
-a.push(10);
-a.push(20);
-a.push(30);
+stack.push(10);
+stack.push(20);
+stack.push(30);
 
-console.log(a.peek());
-console.log(a.isEmpty());
-console.log(a.pop());
-console.log(a.size());
+// console.log(stack.peek());
+// console.log(stack.isEmpty());
+// console.log(stack.pop());
+// console.log(stack.size());
