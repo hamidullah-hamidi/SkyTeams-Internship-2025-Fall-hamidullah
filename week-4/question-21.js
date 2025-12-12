@@ -1,17 +1,26 @@
 // Author: hamidullah hamidi
-// Date: 2025/12/10
+// Date: 2025/11/12
 
 // Question: Longest Palindromic Substring
 
 // Description: Find the longest palindromic substring in the given string.
-
 // Example: Input: "babab" → "bab" or "aba"
 
-export function longestPalindrome(str) {
-  findSubStrings(str);
-}
+function longestPalindrome(str) {
+  let subPalindrome = '';
 
-console.log(longestPalindrome('babad'));
+  const subStrings = findSubStrings(str);
+
+  for (let e of subStrings) {
+    const reverse = e.toString().split('').reverse().join('');
+
+    if (reverse === e) {
+      if (e.length > subPalindrome.length) subPalindrome = e;
+    }
+  }
+
+  return subPalindrome;
+}
 
 function findSubStrings(str) {
   let subStrings = [];
@@ -27,4 +36,6 @@ function findSubStrings(str) {
   return subStrings;
 }
 
-console.table(findSubStrings('babad'));
+console.log(longestPalindrome('babad'));
+console.log(longestPalindrome('baab'));
+console.log(longestPalindrome('babab'));
