@@ -6,7 +6,7 @@
 // Description: Find the longest palindromic substring in the given string.
 // Example: Input: "babab" → "bab" or "aba"
 
-function longestPalindrome(str) {
+const longestPalindrome = (str) => {
   let subPalindrome = '';
 
   const subStrings = findSubStrings(str);
@@ -20,7 +20,7 @@ function longestPalindrome(str) {
   }
 
   return subPalindrome;
-}
+};
 
 function findSubStrings(str) {
   let subStrings = [];
@@ -39,3 +39,5 @@ function findSubStrings(str) {
 console.log(longestPalindrome('babad'));
 console.log(longestPalindrome('baab'));
 console.log(longestPalindrome('babab'));
+
+export default longestPalindrome;
