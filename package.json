@@ -58,7 +58,7 @@
     "why-is-node-running": "^2.3.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "npx vitest run"
   },
   "repository": {
     "type": "git",
