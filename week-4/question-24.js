@@ -5,8 +5,11 @@
 
 // Given an array of numbers and a value k, find the number that would appear in the k-th
 // position if the array were sorted in descending order.
-//  نزولی = descending
 
-export const KLargestElement = (arr, k) => {};
+export const KLargestElement = (arr, k) => {
+  arr.sort((a, b) => b - a);
 
-KLargestElement([5, 4, 3, 2, 1], 4); // 1
+  return Number(arr.slice(k - 1, k));
+};
+
+console.log(KLargestElement([5, 4, 3, 2, 1], 4));
