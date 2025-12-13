@@ -7,6 +7,7 @@
 
 export const topKFrequentElements = (arr, k) => {
   const obj = {};
+  const array = [];
   const result = [];
 
   for (let el of arr) {
@@ -14,18 +15,15 @@ export const topKFrequentElements = (arr, k) => {
     else obj[el] = 1;
   }
 
-  let i = 0;
   for (let key in obj) {
-    let longest = obj[key];
-    if (obj[key] > longest && i < k) {
-      0;
-      longest = +key;
-      result.push(key);
-      i++;
-    }
+    array.push([+key, obj[key]]);
   }
 
-  return result.map(Number);
+  array.sort((a, b) => b[1] - a[1]);
+
+  array.slice(0, k).map((el) => result.push(el[0]));
+
+  return result;
 };
 
 console.log(topKFrequentElements([1, 1, 1, 2, 2, 5, 5, 5, 5, 5, 3], 2)); // [1,5]
