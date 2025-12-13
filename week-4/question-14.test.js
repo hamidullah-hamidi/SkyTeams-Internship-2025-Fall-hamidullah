@@ -1,0 +1,27 @@
+import { describe, it, expect } from 'vitest';
+import { permutationsOfString } from './question-14';
+
+describe('permutationsOfString', () => {
+  it('should return all permutations of "a"', () => {
+    expect(permutationsOfString('a')).toEqual(['a']);
+  });
+
+  it('should return all permutations of "ab"', () => {
+    expect(permutationsOfString('ab')).toEqual(['ab', 'ba'].sort());
+  });
+
+  it('should return all permutations of "abc"', () => {
+    expect(permutationsOfString('abc')).toEqual([
+      'abc',
+      'acb',
+      'bac',
+      'bca',
+      'cab',
+      'cba',
+    ]);
+  });
+
+  it('should return all permutations of empty string', () => {
+    expect(permutationsOfString('')).toEqual(['']);
+  });
+});
