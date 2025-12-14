@@ -37,8 +37,12 @@ export class Queue {
     }
   }
 
-  print() {
-    this.items.print();
+  getAll() {
+    this.items.getAll();
+  }
+
+  size() {
+    return this.items.size();
   }
 }
 
@@ -48,9 +52,9 @@ queue.enqueue(10);
 queue.enqueue(20);
 queue.enqueue(30);
 
-queue.print();
+queue.getAll();
 queue.reverseQueue();
-queue.print();
+queue.getAll();
 
 console.log(queue.front());
 console.log(queue.rear());

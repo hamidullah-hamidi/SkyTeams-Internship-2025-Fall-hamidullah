@@ -48,11 +48,36 @@ export class LinkedList {
     return value;
   }
 
+  deleteLast() {
+    if (!this.head) return null;
+
+    const value = this.tail.value;
+
+    let current = this.head;
+    let next = this.head.next;
+
+    if (!next) {
+      this.head = null;
+      this.tail = null;
+      return value;
+    }
+
+    while (next.next !== null) {
+      current = current.next;
+      next = next.next;
+    }
+
+    current.next = null;
+    this.tail = current;
+
+    return value;
+  }
+
   isEmpty() {
     return this.head === null;
   }
 
-  print() {
+  getAll() {
     let current = this.head;
     const result = [];
 
@@ -61,7 +86,17 @@ export class LinkedList {
       current = current.next;
     }
 
-    console.log(result);
+    return result;
+  }
+
+  size() {
+    let count = 0;
+    let current = this.head;
+    while (current) {
+      count++;
+      current = current.next;
+    }
+    return count;
   }
 }
 
@@ -70,11 +105,13 @@ const list = new LinkedList();
 // list.insertLast(10);
 // list.insertLast(20);
 // list.insertLast(30);
-// list.print();
+// console.log(list.getAll());
 // list.insertLast(40);
-// list.print();
+// list.getAll();
 // list.insertFirst(5);
-// list.print();
+// list.getAll();
 // list.deleteFirst();
-// list.print();
+// list.deleteLast();
+// list.getAll();
 // console.log(list.searchValue(20));
+// console.log(list.size());
