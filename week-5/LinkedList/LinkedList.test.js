@@ -1,8 +1,8 @@
 import { it, expect } from 'vitest';
-import { SinglyLinkedList } from './LinkedList';
+import { LinkedList } from './LinkedList';
 
 it('insertLast works', () => {
-  const list = new SinglyLinkedList();
+  const list = new LinkedList();
   list.insertLast(10);
   list.insertLast(20);
 
@@ -10,7 +10,7 @@ it('insertLast works', () => {
 });
 
 it('insertFirst works', () => {
-  const list = new SinglyLinkedList();
+  const list = new LinkedList();
   list.insertLast(10);
   list.insertFirst(5);
 
@@ -18,7 +18,7 @@ it('insertFirst works', () => {
 });
 
 it('deleteFirst works', () => {
-  const list = new SinglyLinkedList();
+  const list = new LinkedList();
   list.insertLast(10);
   list.insertLast(20);
   list.deleteFirst();

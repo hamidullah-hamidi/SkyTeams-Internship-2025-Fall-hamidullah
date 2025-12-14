@@ -5,55 +5,56 @@ class Node {
   }
 }
 
-export class SinglyLinkedList {
+export class LinkedList {
   constructor() {
     this.head = null;
+    this.tail = null;
   }
 
   insertFirst(value) {
-    let newNode = new Node(value);
-
-    if (!this.head) this.head = newNode;
-    else {
-      newNode.next = this.head;
-      this.head = newNode;
-    }
-  }
-
-  insertLast(value) {
-    let newNode = new Node(value);
+    const newNode = new Node(value);
 
     if (!this.head) {
       this.head = newNode;
+      this.tail = newNode;
       return;
     }
 
-    let current = this.head;
-    while (current.next) {
-      current = current.next;
+    newNode.next = this.head;
+    this.head = newNode;
+  }
+
+  insertLast(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+      return;
     }
-    current.next = newNode;
+
+    this.tail.next = newNode;
+    this.tail = newNode;
   }
 
   deleteFirst() {
-    if (!this.head) return;
+    if (!this.head) return null;
+
+    const value = this.head.value;
     this.head = this.head.next;
+
+    if (!this.head) this.tail = null;
+
+    return value;
   }
 
-  searchValue(value) {
-    let current = this.head;
-
-    while (current) {
-      if (current.value === value) return true;
-      current = current.next;
-    }
-
-    return false;
+  isEmpty() {
+    return this.head === null;
   }
 
   print() {
     let current = this.head;
-    let result = [];
+    const result = [];
 
     while (current) {
       result.push(current.value);
@@ -64,16 +65,16 @@ export class SinglyLinkedList {
   }
 }
 
-const list = new SinglyLinkedList();
+const list = new LinkedList();
 
-list.insertLast(10);
-list.insertLast(20);
-list.insertLast(30);
-list.print();
-list.insertLast(40);
-list.print();
-list.insertFirst(5);
-list.print();
-list.deleteFirst();
-list.print();
-console.log(list.searchValue(20));
+// list.insertLast(10);
+// list.insertLast(20);
+// list.insertLast(30);
+// list.print();
+// list.insertLast(40);
+// list.print();
+// list.insertFirst(5);
+// list.print();
+// list.deleteFirst();
+// list.print();
+// console.log(list.searchValue(20));
