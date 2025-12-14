@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class SinglyLinkedList {
+export class SinglyLinkedList {
   constructor() {
     this.head = null;
   }
@@ -64,16 +64,16 @@ class SinglyLinkedList {
   }
 }
 
-const linkedList = new SinglyLinkedList();
+const list = new SinglyLinkedList();
 
-linkedList.insertLast(10);
-linkedList.insertLast(20);
-linkedList.insertLast(30);
-linkedList.print();
-linkedList.insertLast(40);
-linkedList.print();
-linkedList.insertFirst(5);
-linkedList.print();
-linkedList.deleteFirst();
-linkedList.print();
-console.log(linkedList.searchValue(20));
+list.insertLast(10);
+list.insertLast(20);
+list.insertLast(30);
+list.print();
+list.insertLast(40);
+list.print();
+list.insertFirst(5);
+list.print();
+list.deleteFirst();
+list.print();
+console.log(list.searchValue(20));
