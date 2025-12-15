@@ -14,7 +14,7 @@ export class Stack {
   }
 
   top() {
-    return this.list.tail.value;
+    return this.list.tail ? this.list.tail.value : null;
   }
 
   isEmpty() {
@@ -26,13 +26,13 @@ export class Stack {
   }
 }
 
-const stack = new Stack();
+// const stack = new Stack();
 
-stack.push(10);
-stack.push(20);
-stack.push(30);
+// stack.push(10);
+// stack.push(20);
+// stack.push(30);
 
-console.log(stack.size());
+// console.log(stack.size());
 
 // console.log(stack.isEmpty());
 // console.log(stack.pop());

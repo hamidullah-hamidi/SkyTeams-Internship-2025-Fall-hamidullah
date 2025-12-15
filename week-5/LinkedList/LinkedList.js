@@ -52,9 +52,10 @@ export class LinkedList {
     if (!this.head) return null;
 
     if (!this.head.next) {
+      const value = this.head.value;
       this.head = null;
       this.tail = null;
-      return;
+      return value;
     }
 
     let current = this.head;
@@ -65,8 +66,12 @@ export class LinkedList {
       next = next.next;
     }
 
+    const value = next.value;
+
     current.next = null;
     this.tail = current;
+
+    return value;
   }
   // 1, 2, 3
 
