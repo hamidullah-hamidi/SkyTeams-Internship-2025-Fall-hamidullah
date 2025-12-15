@@ -12,7 +12,6 @@
 
 import { Stack } from './stack/stack.js';
 
-// [1, 2, 3]
 export class QueueUsingStacks {
   constructor() {
     this.stack1 = new Stack();
@@ -26,27 +25,32 @@ export class QueueUsingStacks {
   pop() {
     if (!this.stack2.isEmpty()) return this.stack2.pop();
 
-    while (this.stack1.isEmpty()) {
+    while (!this.stack1.isEmpty()) {
       this.stack2.push(this.stack1.pop());
     }
 
-    console.log(this.stack2);
     return this.stack2.pop();
   }
 
   peek() {
-    return;
+    if (!this.stack2.isEmpty()) return this.stack2.top;
+
+    while (!this.stack1.isEmpty()) {
+      this.stack2.push(this.stack1.pop());
+    }
+
+    return this.stack2.top();
   }
 
   empty() {
-    return this.stack1.isEmpty();
+    return this.stack1.isEmpty() && this.stack2.isEmpty();
   }
 }
 
-const queue = new QueueUsingStacks();
+// const queue = new QueueUsingStacks();
 
-queue.push(1);
-queue.push(2);
+// queue.push(1);
+// queue.push(2);
 // console.log(queue.peek()); // 1
-console.log(queue.pop()); // 1
+// console.log(queue.pop()); // 1
 // console.log(queue.empty()); // false
