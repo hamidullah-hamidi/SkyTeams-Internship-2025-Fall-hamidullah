@@ -1,28 +1,27 @@
 import { LinkedList } from '../LinkedList/LinkedList.js';
-
 export class Queue {
   constructor() {
-    this.items = new LinkedList();
+    this.list = new LinkedList();
   }
 
   enqueue(value) {
-    this.items.insertLast(value);
+    return this.list.insertLast(value);
   }
 
   dequeue() {
-    return this.items.deleteFirst();
+    return this.list.deleteFirst();
   }
 
   front() {
-    return this.items.head ? this.items.head.value : null;
+    return this.list.head ? this.list.head.value : null;
   }
 
   rear() {
-    return this.items.tail ? this.items.tail.value : null;
+    return this.list.tail ? this.list.tail.value : null;
   }
 
   isEmpty() {
-    return this.items.isEmpty();
+    return this.list.isEmpty();
   }
 
   reverseQueue() {
@@ -30,7 +29,7 @@ export class Queue {
 
     while (!this.isEmpty()) {
       stack.push(this.dequeue());
-    }
+    } // stack: [10, 20, 30]
 
     while (stack.length) {
       this.enqueue(stack.pop());
@@ -38,11 +37,11 @@ export class Queue {
   }
 
   getAll() {
-    this.items.getAll();
+    return this.list.getAll();
   }
 
   size() {
-    return this.items.size();
+    return this.list.size();
   }
 }
 
@@ -52,9 +51,9 @@ queue.enqueue(10);
 queue.enqueue(20);
 queue.enqueue(30);
 
-queue.getAll();
+console.log(queue.getAll());
 queue.reverseQueue();
-queue.getAll();
+console.log(queue.getAll());
 
-console.log(queue.front());
-console.log(queue.rear());
+// console.log(queue.front());
+// console.log(queue.rear());

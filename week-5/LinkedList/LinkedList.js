@@ -51,16 +51,14 @@ export class LinkedList {
   deleteLast() {
     if (!this.head) return null;
 
-    const value = this.tail.value;
+    if (!this.head.next) {
+      this.head = null;
+      this.tail = null;
+      return;
+    }
 
     let current = this.head;
     let next = this.head.next;
-
-    if (!next) {
-      this.head = null;
-      this.tail = null;
-      return value;
-    }
 
     while (next.next !== null) {
       current = current.next;
@@ -69,49 +67,50 @@ export class LinkedList {
 
     current.next = null;
     this.tail = current;
-
-    return value;
   }
+  // 1, 2, 3
 
   isEmpty() {
     return this.head === null;
   }
 
   getAll() {
+    const list = [];
     let current = this.head;
-    const result = [];
 
     while (current) {
-      result.push(current.value);
+      list.push(current.value);
       current = current.next;
     }
 
-    return result;
+    return list;
   }
 
   size() {
     let count = 0;
     let current = this.head;
+
     while (current) {
       count++;
       current = current.next;
     }
+
     return count;
   }
 }
 
-const list = new LinkedList();
+// const list = new LinkedList();
 
-// list.insertLast(10);
-// list.insertLast(20);
+// list.insertFirst(10);
 // list.insertLast(30);
+
 // console.log(list.getAll());
-// list.insertLast(40);
-// list.getAll();
-// list.insertFirst(5);
-// list.getAll();
-// list.deleteFirst();
-// list.deleteLast();
-// list.getAll();
-// console.log(list.searchValue(20));
 // console.log(list.size());
+
+// console.log(list.isEmpty());
+
+// list.deleteFirst();
+// console.log(list.getAll());
+
+// console.log(list.deleteLast());
+// console.log(list.getAll());

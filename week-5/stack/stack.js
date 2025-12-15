@@ -2,27 +2,27 @@ import { LinkedList } from '../LinkedList/LinkedList.js';
 
 export class Stack {
   constructor() {
-    this.items = new LinkedList();
+    this.list = new LinkedList();
   }
 
   push(value) {
-    this.items.insertLast(value);
+    this.list.insertLast(value);
   }
 
   pop() {
-    return this.items.deleteLast();
+    return this.list.deleteLast();
   }
 
   top() {
-    return this.items.tail.value;
+    return this.list.tail.value;
   }
 
   isEmpty() {
-    return this.items.isEmpty();
+    return this.list.isEmpty();
   }
 
   size() {
-    return this.items.size();
+    return this.list.size();
   }
 }
 
