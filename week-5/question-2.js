@@ -1,7 +1,7 @@
 // Author: hamidullah hamidi
 // Date: 2025/15/11
 
-// Question:  Min Stack
+// Question: Min Stack
 // Problem: Design a stack that supports:
 // • push(x)
 // • pop()
@@ -13,19 +13,25 @@ import { LinkedList } from './LinkedList/LinkedList.js';
 export class MinStack {
   constructor() {
     this.values = new LinkedList();
-    this.min = null;
+    this.minStack = new LinkedList();
   }
 
   push(value) {
-    if (!this.head) this.min = value;
-    else if (value < this.min.value) this.min.value = value;
-    console.log(this.min);
+    this.values.insertLast(value);
 
-    return this.values.insertLast(value);
+    if (!this.minStack.head || value <= this.minStack.tail.value) {
+      this.minStack.insertLast(value);
+    }
   }
 
   pop() {
-    return this.values.deleteLast();
+    const popped = this.values.deleteLast();
+
+    if (this.minStack.tail && popped === this.minStack.tail.value) {
+      this.minStack.deleteLast();
+    }
+
+    return popped;
   }
 
   top() {
@@ -33,11 +39,12 @@ export class MinStack {
   }
 
   getMin() {
-    return this.min;
+    return this.minStack.tail ? this.minStack.tail.value : null;
   }
 
   getAll() {
-    return this.values.getAll();
+    console.log('Stack values:', this.values.getAll());
+    console.log('MinStack values:', this.minStack.getAll());
   }
 }
 
@@ -45,6 +52,17 @@ const stack = new MinStack();
 
 stack.push(10);
 stack.push(20);
+stack.push(5);
+stack.push(13);
+stack.push(2);
 
-console.log(stack.getAll());
+stack.getAll();
+console.log(stack.getMin());
+
+stack.pop();
+stack.getAll();
+console.log(stack.getMin());
+
+stack.pop();
+stack.getAll();
 console.log(stack.getMin());
