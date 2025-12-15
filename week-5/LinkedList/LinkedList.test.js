@@ -1,0 +1,27 @@
+import { it, expect } from 'vitest';
+import { LinkedList } from './LinkedList';
+
+it('insertLast works', () => {
+  const list = new LinkedList();
+  list.insertLast(10);
+  list.insertLast(20);
+
+  expect(list.getAll()).toEqual([10, 20]);
+});
+
+it('insertFirst works', () => {
+  const list = new LinkedList();
+  list.insertLast(10);
+  list.insertFirst(5);
+
+  expect(list.getAll()).toEqual([5, 10]);
+});
+
+it('deleteFirst works', () => {
+  const list = new LinkedList();
+  list.insertLast(10);
+  list.insertLast(20);
+  list.deleteFirst();
+
+  expect(list.getAll()).toEqual([20]);
+});
