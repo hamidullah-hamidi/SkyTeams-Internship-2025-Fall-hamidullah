@@ -25,10 +25,11 @@ root.right.right = new TreeNode(5);
 export const treeHeight = (root) => {
   if (!root) return 0;
   return 1 + Math.max(treeHeight(root.left), treeHeight(root.right));
-  //     1      => 1
-  //  2    3    => 1 + 1
-  // 4 5  4 5   => 1 + 1 + 1  => 3
 };
 
 // console.log(treeHeight());
-console.log(treeHeight(root));
+// console.log(treeHeight(root));
+
+//     1      => 1
+//  2    3    => 1 + 1
+// 4 5  4 5   => 1 + 1 + 1  => 3
