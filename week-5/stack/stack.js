@@ -24,6 +24,10 @@ export class Stack {
   size() {
     return this.list.size();
   }
+
+  getAll() {
+    return this.list.getAll();
+  }
 }
 
 // const stack = new Stack();

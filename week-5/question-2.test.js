@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { MinStack } from './MinStack.js';
+import { MinStack } from './question-2';
 
 describe('MinStack', () => {
   it('push, pop, top, getMin', () => {

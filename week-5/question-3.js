@@ -33,7 +33,7 @@ export class QueueUsingStacks {
   }
 
   peek() {
-    if (!this.stack2.isEmpty()) return this.stack2.top;
+    if (!this.stack2.isEmpty()) return this.stack2.top();
 
     while (!this.stack1.isEmpty()) {
       this.stack2.push(this.stack1.pop());

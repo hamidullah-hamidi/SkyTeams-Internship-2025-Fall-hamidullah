@@ -48,21 +48,21 @@ export class MinStack {
   }
 }
 
-const stack = new MinStack();
+// const stack = new MinStack();
 
-stack.push(10);
-stack.push(20);
-stack.push(5);
-stack.push(13);
-stack.push(2);
+// stack.push(10);
+// stack.push(20);
+// stack.push(5);
+// stack.push(13);
+// stack.push(2);
 
-stack.getAll();
-console.log(stack.getMin());
+// stack.getAll();
+// console.log(stack.getMin());
 
-stack.pop();
-stack.getAll();
-console.log(stack.getMin());
+// stack.pop();
+// stack.getAll();
+// console.log(stack.getMin());
 
-stack.pop();
-stack.getAll();
-console.log(stack.getMin());
+// stack.pop();
+// stack.getAll();
+// console.log(stack.getMin());
