@@ -44,6 +44,7 @@ export const treeHeight = (root) => {
   return hight;
 
   //  with recursion (simple & short):
+  // if (!root) return 0;
   // return 1 + Math.max(treeHeight(root.left), treeHeight(root.right));
 };
 
