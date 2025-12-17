@@ -7,10 +7,10 @@
 // Example:
 // "hello" → Not Unique
 
-import { myIncludes } from '../helpers/arrays/myIncludes.js';
+// import { myIncludes } from '../helpers/arrays/myIncludes.js';
 
 // with obj -> O(n)
-export const isUniqueString = (str) => {
+export const isUniqueChar = (str) => {
   let obj = {};
 
   for (let el of str) {
@@ -21,7 +21,7 @@ export const isUniqueString = (str) => {
   return true;
 };
 
-console.log(isUniqueString('hello'));
+console.log(isUniqueChar('hello'));
 
 //* another way
 /*  O(n)2

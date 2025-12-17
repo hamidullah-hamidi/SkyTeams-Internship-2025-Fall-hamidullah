@@ -9,20 +9,20 @@
 import { mySplit } from '../helpers/strings/mySplit.js';
 
 export const stringPattern = (pattern, sentence) => {
-  const map1 = new Map();
-  const map2 = new Map();
+  const patternToWord = new Map();
+  const wordToPattern = new Map();
 
   const arr = mySplit(sentence);
 
   if (pattern.length !== arr.length) return false;
 
   for (let i = 0; i < pattern.length; i++) {
-    if (map1.has(pattern[i])) {
-      if (map1.get(pattern[i]) !== arr[i]) return false;
-    } else map1.set(pattern[i], arr[i]);
-    if (map2.has(arr[i])) {
-      if (map2.get(arr[i]) !== pattern[i]) return false;
-    } else map2.set(arr[i], pattern[i]);
+    if (patternToWord.has(pattern[i])) {
+      if (patternToWord.get(pattern[i]) !== arr[i]) return false;
+    } else patternToWord.set(pattern[i], arr[i]);
+    if (wordToPattern.has(arr[i])) {
+      if (wordToPattern.get(arr[i]) !== pattern[i]) return false;
+    } else wordToPattern.set(arr[i], pattern[i]);
   }
 
   return true;
